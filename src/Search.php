@@ -12,4 +12,21 @@ class Search {
 
         return (array) json_decode($get);
     }
+
+    public function getAddressFromAddress(string $address) : array {
+        $this->url = 'http://cep.la/';
+        $opts = [
+            "http" => [
+                "method" => "GET",
+                "header" => "Accept: application/json\r\n"
+            ]
+        ];
+        
+        $context = stream_context_create($opts);
+
+        $address = str_replace(' ', '-', $address);
+        
+        $file = file_get_contents($this->url . $address, false, $context);
+        return (array) json_decode($file);
+    }
 }
