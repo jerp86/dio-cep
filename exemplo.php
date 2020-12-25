@@ -16,3 +16,7 @@ print_r($resultado);
  */
 $resultado = $busca->getAddressFromAddress('sp botucatu residencial vila di capri avenida universitária');
 print_r($resultado);
+
+/* Buscando informações pelo nº do CEP através do apiCEP */
+$resultado = $busca->getAddressFromZipcode('18608262', 2);
+print_r($resultado);

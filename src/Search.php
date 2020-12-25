@@ -5,12 +5,22 @@ namespace jerp86\DioCep;
 class Search {
     private $url = "http://viacep.com.br/ws/";
 
-    public function getAddressFromZipcode(string $zipCode) : array {
+    public function getAddressFromZipcode(string $zipCode, int $api = 1) : ?array {
         $zipCode = preg_replace('/[^0-9]/im', '', $zipCode);
 
-        $get = file_get_contents($this->url . $zipCode . "/json");
+        if ($api === 1) {
+            $get = file_get_contents($this->url . $zipCode . "/json");
+    
+            return (array) json_decode($get);
+        }
+        
+        if ($api === 2) {
+            $this->url = 'https://ws.apicep.com/cep/';
 
-        return (array) json_decode($get);
+            $get = file_get_contents($this->url . $zipCode . '.json');
+
+            return (array) json_decode($get);
+        }
     }
 
     public function getAddressFromAddress(string $address) : array {
