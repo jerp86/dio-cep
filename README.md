@@ -34,7 +34,7 @@ O curso "[Desenvolvimento avançado em PHP](https://web.digitalinnovation.one/co
 
 Aprendendo sobre a visão geral da sintaxe, o que é e como utilizar o Composer - um gerente de dependências do PHP.
 
-Aprendendo a criar uma library para reutilizar o código, utilizando o Composer.
+Aprendendo a criar uma library para reutilizar o código, utilizando o Composer e publicando no [Packagist](https://packagist.org/).
 
 Aprendendo Laravel e Symfony, dois dos frameworks mais utilizados do PHP que auxiliam no desenvolvimento de aplicações de maneira rápida e fácil.
 
@@ -48,8 +48,31 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 - :elephant: [PHP](https://www.php.net/manual/pt_BR/intro-whatis.php)
 - <img src="https://avatars1.githubusercontent.com/u/837015?s=30&v=4"> [Composer](https://getcomposer.org/)
+- API [ViaCEP](http://viacep.com.br)
+- API [CEP.lá](http://cep.la/)
 
 
 ## Licença 
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+<h4 align="center">
+  Feito com ❤️ por Jerp86 👋️ <a href="mailto:jerp4@hotmail.com">Entre em contato!</a>
+</h4>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/jerp/">
+    <img alt="Perfil do Linkedin de José Eduardo Rodrigues Pinto" src="https://img.shields.io/badge/LinkedIn-jerp-0e76a8?style=flat&logoColor=white&logo=linkedin">
+  </a>
+  <a href="https://www.facebook.com/jerpbtu">
+    <img alt="Perfil do Facebook de José Eduardo Rodrigues Pinto" src="https://img.shields.io/badge/Facebook-jerpbtu-1778F2?style=flat&logoColor=white&logo=facebook">
+  </a>
+  <a href="https://www.instagram.com/jerpbtu/">
+    <img alt="Perfil do Instagram de José Eduardo Rodrigues Pinto" src="https://img.shields.io/badge/Instagram-@jerpbtu-833AB4?style=flat&logoColor=white&logo=instagram">
+  </a>
+  <a href="https://twitter.com/jerpbtu">
+    <img alt="Perfil do Twitter de José Eduardo Rodrigues Pinto" src="https://img.shields.io/twitter/follow/jerpbtu?style=flat&logoColor=white&logo=Twitter">
+  </a>
+</p>
