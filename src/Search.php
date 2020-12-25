@@ -6,7 +6,17 @@ class Search {
     private $url = "http://viacep.com.br/ws/";
 
     public function getAddressFromZipcode(string $zipCode, int $api = 1) : ?array {
+        if (!preg_match('/^[0-9][0-9]*$/', $zipCode)) {
+            echo 'Zip Code is invalid!' . PHP_EOL . 'Insert only numbers, please';
+            return null;
+        }
+        
         $zipCode = preg_replace('/[^0-9]/im', '', $zipCode);
+
+        if (strlen($zipCode) <=> 8) {
+            echo 'The length of Zip Code is 8 numbers, please correct the information.' . PHP_EOL;
+            return null;
+        }
 
         if ($api === 1) {
             $get = file_get_contents($this->url . $zipCode . "/json");
