@@ -22,6 +22,15 @@ class SearchTest extends TestCase {
       return;
     }
 
+    /* Validando se o insert é apenas númemros */
+    if (!preg_match('/^[0-9][0-9]*$/', $input)) {
+      $resultado = $resultado->getAddressFromZipCode($input);
+      $esperado = null;
+    
+      $this->assertEquals($esperado, $resultado);
+      return;
+    }
+
     $resultado = $resultado->getAddressFromZipCode($input);
     
     $this->assertEquals($esperado, $resultado);
@@ -112,6 +121,12 @@ class SearchTest extends TestCase {
           "address" => "Rua Luís Asson",
           "statusText" => "ok"        
         ],
+      ],
+      "Validando o texto de entrada" => [
+        "Aqui será texto ao invés de números",
+        [
+          'Zip Code is invalid! Insert only numbers, please',
+        ]
       ],
     ];
   }
