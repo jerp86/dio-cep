@@ -57,7 +57,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 ## :test_tube: Resultado dos Testes
 <p align="center">
- <img src="https://user-images.githubusercontent.com/54115624/103156109-28299100-4784-11eb-9447-8b465f14c71f.png" width="800">
+ <img src="https://user-images.githubusercontent.com/54115624/103160840-2c6fa180-47b8-11eb-99d7-59cd2d56ad89.png" width="800">
 </p>
 
 ## :memo: Licença 
