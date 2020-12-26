@@ -7,14 +7,14 @@ class Search {
 
     public function getAddressFromZipcode(string $zipCode, int $api = 1) : ?array {
         if (!preg_match('/^[0-9][0-9]*$/', $zipCode)) {
-            echo 'Zip Code is invalid!' . PHP_EOL . 'Insert only numbers, please';
+            // echo 'Zip Code is invalid! Insert only numbers, please';
             return null;
         }
-        
+
         $zipCode = preg_replace('/[^0-9]/im', '', $zipCode);
 
         if (strlen($zipCode) <=> 8) {
-            echo 'The length of Zip Code is 8 numbers, please correct the information.' . PHP_EOL;
+            // echo 'The length of Zip Code is 8 numbers, please correct the information.';
             return null;
         }
 
@@ -47,6 +47,7 @@ class Search {
         $address = str_replace(' ', '-', $address);
         
         $file = file_get_contents($this->url . $address, false, $context);
-        return (array) json_decode($file);
+        
+        return (array) $file;
     }
 }
