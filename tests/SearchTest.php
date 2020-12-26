@@ -10,8 +10,20 @@ class SearchTest extends TestCase {
    */
   public function testGetAddressFromZipcode(string $input, array $esperado) {
     $resultado = new Search;
-    $resultado = $resultado->getAddressFromZipCode($input);
+    
+    /* testando a apiCEP */
+    if (preg_match('/º/', $input)) {
+      
+      $input = preg_replace('/[^0-9]/im', '', $input);
+      
+      $resultado = $resultado->getAddressFromZipCode($input, 2);
+      
+      $this->assertEquals($esperado, $resultado);
+      return;
+    }
 
+    $resultado = $resultado->getAddressFromZipCode($input);
+    
     $this->assertEquals($esperado, $resultado);
   }
 
@@ -47,7 +59,7 @@ class SearchTest extends TestCase {
           'siafi' => '6249',
         ],
       ],
-      "Endereço aula" => [
+      "Endereço da aula" => [
         "03624010",
         [
             "cep" => "03624-010",
@@ -60,6 +72,45 @@ class SearchTest extends TestCase {
             "gia" => "1004",
             "ddd" => "11",
             "siafi" => "7107"
+        ],
+      ],
+      "2º Endereço Praça da Sé" => [
+        "º01001000",
+        [
+          "status" => 200,
+          "ok" => true,
+          "code" => "01001-000",
+          "state" => "SP",
+          "city" => "São Paulo",
+          "district" => "Sé",
+          "address" => "Praça da Sé - lado ímpar",
+          "statusText" => "ok"        
+        ],
+      ],
+      "2º Endereço Qualquer" => [
+        "º18608262",
+        [
+          "status" => 200,
+          "ok" => true,
+          "code" => "18608-262",
+          "state" => "SP",
+          "city" => "Botucatu",
+          "district" => "Residencial Vila Di Capri",
+          "address" => "Avenida Universitária - lado par",
+          "statusText" => "ok"
+        ],
+      ],
+      "2º Endereço da aula" => [
+        "º03624010",
+        [
+          "status" => 200,
+          "ok" => true,
+          "code" => "03624-010",
+          "state" => "SP",
+          "city" => "São Paulo",
+          "district" => "Vila Buenos Aires",
+          "address" => "Rua Luís Asson",
+          "statusText" => "ok"        
         ],
       ],
     ];

@@ -10,7 +10,7 @@ class Search {
             echo 'Zip Code is invalid!' . PHP_EOL . 'Insert only numbers, please';
             return null;
         }
-        
+
         $zipCode = preg_replace('/[^0-9]/im', '', $zipCode);
 
         if (strlen($zipCode) <=> 8) {
