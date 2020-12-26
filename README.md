@@ -18,9 +18,12 @@ ___
 <h3 align="center">
   <a href="#information_source-sobre">Sobre</a>&nbsp;|&nbsp;
   <a href="#interrobang-motivo">Motivo</a>&nbsp;|&nbsp;
-  <a href="#seedling-requisitos-mínimos">Requisitos</a>&nbsp;|&nbsp;
+  <a href="#seedling-requisitos-mínimos">Requisitos</a>
+</h3>
+<h3 align="center">
   <a href="#rocket-tecnologias-utilizadas">Tecnologias</a>&nbsp;|&nbsp;
-  <a href="#licença">Licença</a>
+  <a href="#test_tube-resultado-dos-testes">Testes</a>&nbsp;|&nbsp;
+  <a href="#memo-licença">Licença</a>
 </h3>
 
 ___
@@ -50,9 +53,14 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 - <img src="https://avatars1.githubusercontent.com/u/837015?s=30&v=4"> [Composer](https://getcomposer.org/)
 - API [ViaCEP](http://viacep.com.br)
 - API [CEP.lá](http://cep.la/)
+- API [apiCEP](https://apicep.com/)
 
+## :test_tube: Resultado dos Testes
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/54115624/103156109-28299100-4784-11eb-9447-8b465f14c71f.png" width="800">
+</p>
 
-## Licença 
+## :memo: Licença 
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
