@@ -32,7 +32,23 @@ class SearchTest extends TestCase {
     }
 
     $resultado = $resultado->getAddressFromZipCode($input);
+
+    /* verificando o tamanho do input */
+    if (strlen($input) <=> 8) {
+      $esperado = null;
+    }
     
+    $this->assertEquals($esperado, $resultado);
+  }
+
+  /**
+   * @dataProvider textoTeste
+   * @covers jerp86\DioCep\Search
+   */
+  public function testGetAddressFromAddress(string $input, array $esperado) {
+    $resultado = new Search;
+    $resultado = $resultado->getAddressFromAddress($input);
+
     $this->assertEquals($esperado, $resultado);
   }
 
@@ -127,6 +143,29 @@ class SearchTest extends TestCase {
         [
           'Zip Code is invalid! Insert only numbers, please',
         ]
+      ],
+      "Validando a quantia de números digitados" => [
+        "123456789",
+        [
+          'The length of Zip Code is 8 numbers, please correct the information.',
+        ]
+      ],
+    ];
+  }
+
+  public function textoTeste() {
+    return [
+      "Endereço Praça da Sé" => [
+        "são paulo Sé Praça da Sé - lado ímpar",
+        [
+          '[{"cep":"01001000","uf":"SP","cidade":"São Paulo","bairro":"Sé","logradouro":"Praça da Sé - lado ímpar"}]'
+        ]
+      ],
+      "Endereço Qualquer" => [
+        "são paulo vila buenos aires rua luís asson",
+        [
+          '[{"cep":"03624010","uf":"SP","cidade":"São Paulo","bairro":"Vila Buenos Aires","logradouro":"Rua Luís Asson"}]'
+        ],
       ],
     ];
   }

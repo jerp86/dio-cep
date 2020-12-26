@@ -47,6 +47,7 @@ class Search {
         $address = str_replace(' ', '-', $address);
         
         $file = file_get_contents($this->url . $address, false, $context);
-        return (array) json_decode($file);
+        
+        return (array) $file;
     }
 }
