@@ -6,6 +6,7 @@ use jerp86\DioCep\Search;
 class SearchTest extends TestCase {
   /**
    * @dataProvider dadosTeste
+   * @covers jerp86\DioCep\Search
    */
   public function testGetAddressFromZipcode(string $input, array $esperado) {
     $resultado = new Search;

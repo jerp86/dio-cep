@@ -1,0 +1,5 @@
+Search
+ [x] Get address from zipcode with data set "Endereço aula"
+ [x] Get address from zipcode with data set "Endereço Qualquer"
+ [x] Get address from zipcode with data set "Endereço Praça da Sé"
+
